@@ -1,0 +1,35 @@
+﻿<div class="container">
+    <div class="row" style="height: 50px;"></div>
+    <div class="row">
+        <div class="container">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>תאריך</th>
+                        <th>פעולה</th>
+                        <th>כמות</th>
+                        <th>כמות לפני עדכון</th>
+                        <th>כמות אחרי עדכון</th>
+                        <th>שם</th>
+                        <th>הערות</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="change in warehouseManagementStockHistoryChangesCrtl.bulletsStockHistoryChanges | orderBy:'-dateTime'">
+                        <td class="col-md-1" style="max-width: 100px">{{ change.dateTime | date:'dd-MM-yyyy' }}</td>
+                        <td class="col-md-1" style="max-width: 100px">{{ change.actionType }}</td>
+                        <td class="col-md-1 " style="max-width: 100px"
+                            ng-class="{green: change.actionType == 'הוספה', red: change.actionType == 'הסרה' , olive: change.actionType == 'עדכון'}">
+                            {{ change.amount }}
+                        </td>
+                        <td class="col-md-1" style="max-width: 100px">{{ change.previousAmmount }}</td>
+                        <td class="col-md-1" style="max-width: 100px">{{ change.newAmmount }}</td>
+                        <td class="col-md-2" style="max-width: 100px">{{ change.name }}</td>
+                        <td class="col-md-2" style="max-width: 100px">{{ change.remarks }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

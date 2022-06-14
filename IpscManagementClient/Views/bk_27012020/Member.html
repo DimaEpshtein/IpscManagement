@@ -1,0 +1,89 @@
+﻿<div class="container">
+    <div class="row" style="height: 70px;"></div>
+
+    <div>
+        <label class="control-label" for="identity">טען נתונים לפי תז:</label>
+        <div>
+            <input type="number"  min="10000000" max="999999999" class="form-control" ng-model="memberCtrl.member.identity">
+        </div>
+
+
+        <button type="submit" class="btn btn-default" ng-click="memberCtrl.loadMember()">טען</button>
+    </div>
+
+    <form class="form-horizontal">
+        <div class="form-group">
+            <h3>{{memberCtrl.Id}}</h3>
+
+            <label class="control-label" for="identity">תז:</label>
+            <div>
+                <input  type="number"  required class="form-control" min="10000000" max="999999999" id="identity" ng-model="memberCtrl.member.identity">
+            </div>
+
+            <label class="control-label" for="identity">מספר יורה:</label>
+            <div>
+                <input type="number"  required class="form-control" id="shooterIdentity" ng-model="memberCtrl.member.shooterIdentity">
+            </div>
+
+            <label class="control-label" for="firstName">שם פרטי:</label>
+            <div>
+                <input required class="form-control" id="firstName" ng-model="memberCtrl.member.firstName">
+            </div>
+            <label class="control-label" for="lastName">שם משפחה:</label>
+            <div>
+                <input required class="form-control" id="lastName" ng-model="memberCtrl.member.lastName">
+            </div>
+            <label class="control-label" for="lastName">שם האב:</label>
+            <div>
+                <input class="form-control" id="fatherName" ng-model="memberCtrl.member.fatherName">
+            </div>
+
+            <label class="control-label" for="DateofBirth">תאריך לידה:</label>
+            <md-datepicker required class="form-control" style="max-width: 150px !important; margin-right: 0 !important; padding: 0px 0px !important" ng-model="memberCtrl.member.dateofBirth" md-placeholder="תאריך לידה" md-open-on-focus></md-datepicker>
+
+            <label class="control-label" for="gender">מין:</label>
+            <div>
+                <select required class="form-control" name="gender" id="gender" ng-model="memberCtrl.member.gender">
+                    <option value="1">זכר</option>
+                    <option value="2">נקבה</option>
+                </select>
+            </div>
+            <label class="control-label" for="armyId">מספר אישי:</label>
+            <div>
+                <input type="text" class="form-control" id="armyId" ng-model="memberCtrl.member.armyId">
+            </div>
+            <label class="control-label" for="email">דואר אלקטרוני:</label>
+            <div>
+                <input required type="email" class="form-control" id="email" ng-model="memberCtrl.member.email">
+            </div>
+            <label class="control-label" for="city">עיר:</label>
+            <div>
+                <input class="form-control" id="city" ng-model="memberCtrl.member.city">
+            </div>
+            <label class="control-label" for="address">שם רחוב ומספר:</label>
+            <div>
+                <input class="form-control" id="address" ng-model="memberCtrl.member.address">
+            </div>
+            <label class="control-label" for="zip">מיקוד:</label>
+            <div>
+                <input class="form-control" id="zip" ng-model="memberCtrl.member.zip">
+            </div>
+            
+            <label class="control-label" for="phone">טלפון:</label>
+            <div>
+                <input class="form-control" id="phone" ng-model="memberCtrl.member.phone">
+            </div>
+
+            <label class="control-label" for="mobilePhone">טלפון נייד:</label>
+            <div>
+                <input class="form-control" id="mobilePhone" ng-model="memberCtrl.member.mobilePhone">
+            </div>
+            <label class="control-label" for="active">פעיל:</label>
+            <div>
+                <input type="checkbox" class="form-control" id="active" ng-model="memberCtrl.member.active">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-default" ng-click="memberCtrl.saveMember()">שמור</button>
+    </form>
+</div>
+

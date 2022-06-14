@@ -1,0 +1,30 @@
+﻿
+
+
+
+
+
+<div class="container">
+    <div class="row" style="height: 70px;"></div>
+    <label class="control-label" for="identity">תז:</label>
+    <p>ללא אפסים לפני</p>
+    <p>לדוח מחסן נא להזין 1</p>
+
+    <div>
+        <input type="number" required class="form-control" min="1" max="999999999" id="identity" ng-model="reportsCtrl.identity">
+    </div>
+
+    <label class="control-label" for="fromDate">מ תאריך:</label>
+    <p>הכנסת תאריכים לפי פורמט DD/MM/YYYY</p>
+    <input type="text"  class="form-control" id="fromDate" ng-model="reportsCtrl.fromDate">
+    
+    <label class="control-label" for="toDate">עד לתאריך:</label>
+    <p>הכנסת תאריכים לפי פורמט DD/MM/YYYY</p>
+    <input type="text" class="form-control" id="toDate" ng-model="reportsCtrl.toDate">
+    
+    <div>
+        <a class="btn btn-primary" ng-click="reportsCtrl.getReport()">Export</a>
+    </div>
+
+</div>
+

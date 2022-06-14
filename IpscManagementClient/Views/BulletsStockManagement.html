@@ -1,0 +1,46 @@
+﻿<div class="container">
+    <div class="row" style="height: 70px;"></div>
+    <div class="row">
+        <label>חפש: <input class="form-control" ng-model="searchText"></label>
+    </div>
+    <div class="spinner loader" ng-show="bulletsStockManagementCrtl.loading"></div>
+    <div class="row">
+        
+        <div class="container" style="width: 100%; min-width: 1227px;">
+            <table class="table table-inverse">
+                <thead>
+                <tr>
+                    <th style="width:10%">שם</th>
+                    <th style="width:10%">מספר יורה</th>
+                    <th style="width:10%">תז</th>
+                    <th style="width:5%">כמות נוכחית</th>
+                    <th style="width:6%">כמות לעדכון</th>
+                    <th style="width:12%">סוג שינוי</th>
+                    <th style="width:37%">הערות</th>
+                    <th style="width:10%"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="member in bulletsStockManagementCrtl.members | filter:searchText | orderBy:'lastName'">
+                    <td>{{ member.lastName }} {{ member.firstName }}</td>
+                    <td>{{ member.shooterIdentity }}</td>
+                    <td>{{ member.identity }}</td>
+                    <td ng-class="{green: member.amount >= 0, red: member.amount < 0}"><p style="direction: ltr;float: right">{{ member.amount }}</p></td>
+                    <td>
+                        <input class="form-control .col-xs-1" type="text" name="changeAmount" ng-model="member.changeAmount"/>
+                    </td>
+                    <td>
+                        <button class="btn btn-default pull-right" ng-click="bulletsStockManagementCrtl.addAmount(member.identity , member.changeAmount, member.remarks)">הוסף</button>
+                        <button class="btn btn-default pull-left" ng-click="bulletsStockManagementCrtl.removeAmount(member.identity , member.changeAmount, member.remarks)">הסר</button>
+                    </td>
+                    <td><input class="form-control" type="text" name="changeAmount" ng-model="member.remarks"/> </td>
+                    <td>
+                        <button class="btn btn-default pull-right" ng-click="bulletsStockManagementCrtl.history(member.identity)">היסטוריה</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

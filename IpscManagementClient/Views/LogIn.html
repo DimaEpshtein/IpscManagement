@@ -1,0 +1,21 @@
+﻿<div class="row" style="height: 70px;"></div>
+
+<div class="col-md-6 col-md-offset-3">
+    <div class="spinner loader" ng-show="bulletsStockManagementCrtl.loading"></div>
+    <form name="form" ng-submit="loginCtrl.login()" role="form">
+        <div class="form-group" ng-class="{ 'has-error': loginCtrl.username.$dirty && loginCtrl.username.$error.required }">
+            <label for="username">דואר אלקטרוני</label>
+            <input type="text" name="username" id="username" class="form-control" ng-model="loginCtrl.username" required/>
+            <span ng-show="loginCtrl.username.$dirty && loginCtrl.username.$error.required" class="help-block">Username is required</span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': loginCtrl.password.$dirty && loginCtrl.password.$error.required }">
+            <label for="password">סיסמה</label>
+            <input type="password" name="password" id="password" class="form-control" ng-model="loginCtrl.password" required/>
+            <span ng-show="loginCtrl.password.$dirty && loginCtrl.password.$error.required" class="help-block">Password is required</span>
+        </div>
+        <div class="form-actions">
+            <button type="submit" ng-disabled="loginCtrl.$invalid || loginCtrl.dataLoading" class="btn btn-primary">התחבר</button>
+
+        </div>
+    </form>
+</div>
