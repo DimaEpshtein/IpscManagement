@@ -11,6 +11,7 @@ namespace IpscManagement.Services
 {
     public static class SendNotificationEmailService
     {
+        //test
         public static void AmmountChange(BulletsAmountChangeEmailModel bulletsAmountChangeEmail)
         {
             bulletsAmountChangeEmail.Subject = "עדכון מלאי";
